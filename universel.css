@@ -1,0 +1,32 @@
+/*
+universel selector
+
+
+*{
+    color: red;
+} */
+
+/*
+Tag selector
+
+h2{
+
+    color: blue;url(https://google.com/)
+    font-size: 50px;
+    text-decoration: underline;
+    
+    } */
+
+/* id selector
+    #btn{
+
+        color: red;
+    } */
+
+
+    /*
+    
+    attribute selector
+    [href]{
+        color: red;
+    } */
