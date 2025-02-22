@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Only Scrollable Slider</title>
+    <style>
+        /* Slider Wrapper */
+        .slider {
+            width: 800px;
+            height: 400px;
+            overflow-x: auto; /* Enables scrolling */
+            scroll-snap-type: x mandatory; /* Snaps to each slide */
+            white-space: nowrap;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+        }
+
+        /* Scrollbar Styling */
+        .slider::-webkit-scrollbar {
+            height: 8px; /* Scrollbar height */
+        }
+
+        .slider::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .slider::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Slides Container */
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide-animation 9s infinite; /* Auto slide */
+        }
+
+        /* Individual Slide */
+        .slide {
+            width: 100%;
+            flex: none;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Background Colors */
+        .slide:nth-child(1) { background-color: #FF5733; color: white; }
+        .slide:nth-child(2) { background-color: #33FF57; color: black; }
+        .slide:nth-child(3) { background-color: #3357FF; color: white; }
+
+        /* Content Styling */
+        .content {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        .slide h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .slide p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .slide a {
+            display: inline-block;
+            background: #FFD700;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Auto Sliding Animation */
+        @keyframes slide-animation {
+            0% { transform: translateX(0%); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0%); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="content">
+                    <h2>Slide 1: Welcome</h2>
+                    <p>Scrollable & auto sliding container.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="content">
+                    <h2>Slide 2: Features</h2>
+                    <p>Supports both manual and auto sliding.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="content">
+                    <h2>Slide 3: Get Started</h2>
+                    <p>Fully responsive with a scrollbar.</p>
+                    <a href="#">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
